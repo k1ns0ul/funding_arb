@@ -25,7 +25,6 @@ curl "http://localhost:3000/funding/margin-type-opportunities?limit=5"
 
 MEXC GATE BYBIT KUCOIN
 
-
 ## cтруктура сервиса
 ```tree
 funding-arbitrage-backend/src/contexts/funding/
