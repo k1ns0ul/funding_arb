@@ -3,9 +3,13 @@
 ### команды
 
 make build
+
 make up
+
 make logs
+
 make down
+
 make clean
 
 make db-shell
