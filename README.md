@@ -16,6 +16,20 @@ make db-shell
 
 make app-shell
 
+### пример env
+```tree
+NODE_ENV=development
+PORT=3000
+
+DATABASE_HOST=localhost
+DATABASE_PORT=5432
+DATABASE_USERNAME=postgres
+DATABASE_PASSWORD=postgres
+DATABASE_NAME=funding_arbitrage
+DATABASE_SYNCHRONIZE=true
+DATABASE_LOGGING=true
+```
+
 ## эндпоинты
 
 межбиржевой арбитраж (показывает самые большие расхождения по фандинуу):
@@ -90,7 +104,7 @@ funding-arbitrage-backend/src/contexts/funding/
 │   └── funding-fetcher.scheduler.ts
 │
 └── funding.module.ts
-
+```
 
 ## ключевые решения
 
