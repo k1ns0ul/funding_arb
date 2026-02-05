@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: funding_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: funding_arbitrage
+    ports:
+      - "5555:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - funding_network
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: funding_app
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      DATABASE_HOST: postgres
+      DATABASE_PORT: 5432
+      DATABASE_USERNAME: postgres
+      DATABASE_PASSWORD: postgres
+      DATABASE_NAME: funding_arbitrage
+      DATABASE_SYNCHRONIZE: "true"
+      DATABASE_LOGGING: "false"
+    depends_on:
+      - postgres
+    networks:
+      - funding_network
+
+volumes:
+  postgres_data:
+
+networks:
+  funding_network:
+    driver: bridge
