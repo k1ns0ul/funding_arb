@@ -19,9 +19,11 @@ make app-shell
 ## эндпоинты
 
 межбиржевой арбитраж (показывает самые большие расхождения по фандинуу):
+
 curl "http://localhost:3000/funding/opportunities?limit=5"
 
 арбитраж USDT и coin margined:
+
 curl "http://localhost:3000/funding/margin-type-opportunities?limit=5"
 
 
