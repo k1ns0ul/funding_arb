@@ -27,7 +27,7 @@ MEXC GATE BYBIT KUCOIN
 
 
 ## cтруктура сервиса
-
+```tree
 funding-arbitrage-backend/src/contexts/funding/
 ├── entities/
 │   ├── funding-rate.entity.ts
